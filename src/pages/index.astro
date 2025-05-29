@@ -1,25 +1,30 @@
 ---
-import '../styles/global.css';
-// Component Imports
-import Button from '../components/Button.astro';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+import "../styles/global.css"
+import { HeroSection } from "@/components/hero-section";
+import { SpeedResults } from "@/components/speed-results";
+import { FeaturesSection } from "@/components/features-section";
+import { QuickGuideSection } from "@/components/quick-guide-section";
+import { FaqSection } from "@/components/faq-section";
+import { CtaSection } from "@/components/cta-section";
+import { Footer } from "@/components/footer";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
-
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
-		</div>
-	</body>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="PullFast - 国内最快的 Docker 镜像加速服务，无需登录，即装即用" />
+    <title>PullFast - Docker 镜像加速服务</title>
+  </head>
+  <body class="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 antialiased">
+    <main>
+      <HeroSection client:load />
+      <SpeedResults client:load />
+      <QuickGuideSection client:load />
+      <FeaturesSection />
+      <FaqSection client:load/>
+      <CtaSection client:load />
+      <Footer />
+    </main>
+  </body>
 </html>
