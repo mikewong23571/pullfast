@@ -1,7 +1,7 @@
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Copy, CheckCircle } from "lucide-react"
+import {useState} from "react"
+import {Button} from "@/components/ui/button"
+import {Card, CardContent} from "@/components/ui/card"
+import {Copy, CheckCircle} from "lucide-react"
 
 export function QuickGuideSection() {
   const [copied, setCopied] = useState(false)
@@ -17,6 +17,9 @@ export function QuickGuideSection() {
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
+
+  const codeBlockClass = "font-mono text-sm bg-slate-100 dark:bg-slate-900 p-3 rounded-md overflow-x-auto max-w-full whitespace-pre-wrap break-words";
+
 
   return (
     <section className="py-16 md:py-24 bg-slate-100 dark:bg-slate-900/60 px-4">
@@ -35,14 +38,16 @@ export function QuickGuideSection() {
 
             <div className="mb-4 text-sm">
               <div className="font-semibold mb-2 text-slate-700 dark:text-slate-300">Linux / macOS 路径：</div>
-              <code className="bg-slate-100 dark:bg-slate-900 px-2 py-1 rounded font-mono break-all">
+              <code
+                className="font-mono text-sm bg-slate-100 dark:bg-slate-900 px-2 py-1 rounded break-words max-w-full inline-block">
                 /etc/docker/daemon.json
               </code>
             </div>
 
-            <div className="mb-4 text-sm ">
+            <div className="mb-4 text-sm">
               <div className="font-semibold mb-2 text-slate-700 dark:text-slate-300">Windows 路径：</div>
-              <code className="bg-slate-100 dark:bg-slate-900 px-2 py-1 rounded font-mono break-all">
+              <code
+                className="font-mono text-sm bg-slate-100 dark:bg-slate-900 px-2 py-1 rounded break-words max-w-full inline-block">
                 C:\ProgramData\docker\config\daemon.json
               </code>
             </div>
@@ -50,9 +55,10 @@ export function QuickGuideSection() {
             <Card className="mb-4 border-slate-200 dark:border-slate-700">
               <CardContent className="p-0">
                 <div className="relative">
-                  <pre className="language-json p-4 overflow-x-auto font-mono text-sm bg-slate-50 dark:bg-slate-900 rounded-lg">
-                    <code>{daemonConfig}</code>
-                  </pre>
+              <pre
+                className="font-mono text-sm bg-slate-100 dark:bg-slate-900 p-4 rounded-md overflow-x-auto max-w-full whitespace-pre-wrap break-words">
+                <code className="block">{daemonConfig}</code>
+              </pre>
                   <Button
                     size="sm"
                     variant="ghost"
@@ -61,12 +67,12 @@ export function QuickGuideSection() {
                   >
                     {copied ? (
                       <>
-                        <CheckCircle className="h-4 w-4 mr-1" />
+                        <CheckCircle className="h-4 w-4 mr-1"/>
                         已复制
                       </>
                     ) : (
                       <>
-                        <Copy className="h-4 w-4 mr-1" />
+                        <Copy className="h-4 w-4 mr-1"/>
                         复制
                       </>
                     )}
@@ -81,18 +87,21 @@ export function QuickGuideSection() {
             <p className="text-slate-600 dark:text-slate-400 mb-4">配置完成后，需要重启 Docker 服务使配置生效：</p>
 
             <div className="space-y-3">
-              <div className="font-mono bg-slate-100 dark:bg-slate-900 p-3 rounded-md text-sm">
-                <div className="font-semibold mb-1 text-slate-700 dark:text-slate-300">Linux：</div>
+              <div className="font-semibold text-slate-700 dark:text-slate-300">Linux：</div>
+              <div
+                className="font-mono text-sm bg-slate-100 dark:bg-slate-900 p-3 rounded-md overflow-x-auto max-w-full whitespace-pre-wrap break-words">
                 <code>sudo systemctl restart docker</code>
               </div>
 
-              <div className="font-mono bg-slate-100 dark:bg-slate-900 p-3 rounded-md text-sm">
-                <div className="font-semibold mb-1 text-slate-700 dark:text-slate-300">macOS：</div>
+              <div className="font-semibold text-slate-700 dark:text-slate-300">macOS：</div>
+              <div
+                className="font-mono text-sm bg-slate-100 dark:bg-slate-900 p-3 rounded-md overflow-x-auto max-w-full whitespace-pre-wrap break-words">
                 <code>osascript -e 'quit app "Docker"' && open -a Docker</code>
               </div>
 
-              <div className="font-mono bg-slate-100 dark:bg-slate-900 p-3 rounded-md text-sm">
-                <div className="font-semibold mb-1 text-slate-700 dark:text-slate-300">Windows：</div>
+              <div className="font-semibold text-slate-700 dark:text-slate-300">Windows：</div>
+              <div
+                className="font-mono text-sm bg-slate-100 dark:bg-slate-900 p-3 rounded-md overflow-x-auto max-w-full whitespace-pre-wrap break-words">
                 <code>重启 Docker Desktop 应用</code>
               </div>
             </div>
@@ -102,7 +111,8 @@ export function QuickGuideSection() {
             <h3 className="text-xl font-semibold mb-4 dark:text-white">3. 验证配置</h3>
             <p className="text-slate-600 dark:text-slate-400 mb-4">执行以下命令，体验加速效果：</p>
 
-            <div className="font-mono bg-slate-100 dark:bg-slate-900 p-3 rounded-md text-sm">
+            <div
+              className="font-mono text-sm bg-slate-100 dark:bg-slate-900 p-3 rounded-md overflow-x-auto max-w-full whitespace-pre-wrap break-words">
               <code>docker pull pullfast.io/library/ubuntu:latest</code>
             </div>
           </div>
