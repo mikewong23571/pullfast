@@ -10,7 +10,7 @@ export function Footer() {
             <p className="mb-4">国内领先的 Docker 镜像加速服务，让您的容器部署更快、更稳定。</p>
             <div className="flex items-center">
               <a
-                href="https://github.com/pullfast"
+                href="https://github.com/mikewong23571/pullfast-worker"
                 className="flex items-center text-slate-400 hover:text-white transition-colors"
               >
                 <Github className="h-5 w-5 mr-2" />
