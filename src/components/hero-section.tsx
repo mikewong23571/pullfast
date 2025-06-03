@@ -7,7 +7,7 @@ export function HeroSection() {
   const [testComplete, setTestComplete] = useState(false)
   const [copied, setCopied] = useState(false)
 
-  const dockerCommand = "docker pull pullfast.io/library/ubuntu:latest"
+  const dockerCommand = "docker pull mirrors.pullfast.org/library/ubuntu:latest"
 
   const handleSpeedTest = async () => {
     setIsTesting(true)

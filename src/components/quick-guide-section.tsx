@@ -8,7 +8,7 @@ export function QuickGuideSection() {
 
   const daemonConfig = `{
   "registry-mirrors": [
-    "https://mirror.pullfast.io"
+    "https://mirrors.pullfast.org"
   ]
 }`
 
@@ -113,7 +113,7 @@ export function QuickGuideSection() {
 
             <div
               className="font-mono text-sm bg-slate-100 dark:bg-slate-900 p-3 rounded-md overflow-x-auto max-w-full whitespace-pre-wrap break-words">
-              <code>docker pull pullfast.io/library/ubuntu:latest</code>
+              <code>docker pull mirrors.pullfast.org/library/ubuntu:latest</code>
             </div>
           </div>
         </div>

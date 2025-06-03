@@ -10,7 +10,7 @@ export function FaqSection() {
     {
       question: "PullFast 如何与 Podman 配合使用？",
       answer:
-        "Podman 用户可以在 /etc/containers/registries.conf 文件中添加 PullFast 镜像源。具体配置为在 [registries.mirror] 部分添加 'docker.io = [\"https://mirror.pullfast.io\"]'，配置后即可享受加速服务。",
+        "Podman 用户可以在 /etc/containers/registries.conf 文件中添加 PullFast 镜像源。具体配置为在 [registries.mirror] 部分添加 'docker.io = [\"https://mirrors.pullfast.org\"]'，配置后即可享受加速服务。",
     },
     {
       question: "PullFast 支持哪些镜像仓库？",
